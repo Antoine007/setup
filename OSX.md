@@ -435,18 +435,15 @@ two options, you can use tab to circle between them.
 
 ### OSX For hackers
 
-[Read this script](https://gist.github.com/brandonb927/3195465) and cherry-pick some stuff you think will suit you.
+[Read this script](https://github.com/mathiasbynens/dotfiles/blob/master/.macos) and cherry-pick some stuff you think will suit you.
 For instance, you can type in the terminal this one:
 
 ```bash
-# Expanding the save panel by default
-defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
-defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
-defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true
+# Disable the “Are you sure you want to open this application?” dialog
+defaults write com.apple.LaunchServices LSQuarantine -bool false
 
-# Disable system-wide resume
-defaults write com.apple.systempreferences NSQuitAlwaysKeepsWindows -bool false
-
+# Save screenshots to the desktop
+defaults write com.apple.screencapture location -string "${HOME}/Desktop"
 # etc..
 ```
 
